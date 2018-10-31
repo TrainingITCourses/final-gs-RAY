@@ -1,0 +1,172 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>FinalPractise</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1976d2">
+<link rel="stylesheet" href="styles.c3e42e1115e5610fe4f0.css"></head>
+<body>
+  <app-root>
+    <div class="circulo">
+      <div class="cargando">Cargando</div>
+      <div class="cohete">
+        <div class="cohete-cuerpo">
+          <div class="cuerpo"></div>
+          <div class="ala ala-izq"></div>
+          <div class="ala ala-der"></div>
+          <div class="ventana"></div>
+          <div class="letras">RAY</div>
+        </div>
+        <div class="estela"></div>
+      </div>
+    </div>
+  </app-root>
+  <style>
+  .cargando {
+  position: absolute;
+  top: 7%;
+  left: calc(50% - 110px);
+  font-family: 'Alegreya', serif;
+  font-size: 60px;
+  font-style: bold;
+  color: #025f1b;  
+
+  animation: pulse 2.5s linear infinite
+}
+
+.cohete {
+    position: absolute;
+    top: 20%;
+    width: 160px;
+    left: calc(50% - 75px);
+}
+    .cohete-cuerpo {
+      width: 160px;
+      left: calc(50% - 50px);
+      animation: bounce 0.5s infinite;
+    }
+    .cuerpo {
+        background: linear-gradient(to left, #48c729 50%, #1e5510 100%);
+        height: 320px;
+        left: calc(50% - 50px);
+        border-top-right-radius: 100%;
+        border-top-left-radius: 100%;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-top: 5px solid #025f1b;
+      }
+    .ventana {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 100%;
+      background: linear-gradient(to bottom, lightblue 0%, rgb(21, 42, 100) 100%);
+      left: calc(50% - 50px);
+      top: 50px;
+      border: 10px solid #025f1b;
+    }
+    .ala {
+      position: absolute;
+      z-index: -100;
+      height: 110px;
+      width: 120px;
+      background: linear-gradient(to top, #025f1b 20%, #3fac24 100%);
+    }
+    .ala-izq {
+      left: -40px;
+      top: calc(100% - 110px);
+      border-top-left-radius: 80%;
+      border-bottom-left-radius: 20%;
+    }
+    .ala-der {
+      right: -40px;
+      top: calc(100% - 110px);
+      border-top-right-radius: 80%;
+      border-bottom-right-radius: 20%;
+    }
+
+    .letras {
+      position: absolute;
+      width: 120px;
+      top: 175px;
+      left: 25px;
+      font-family: 'Alegreya', serif;
+      font-size: 60px;
+      font-style: bold;
+      color: #025f1b;
+    }
+  }
+  
+  .estela {
+    position: absolute;
+    top: calc(20% + 220px);
+    z-index: -5;
+    width: 70px;
+    background: linear-gradient(to bottom, transparent 10%, #f5f5f5 100%);
+    height: 406px;
+    left: calc(50% - 35px);
+    animation: exhaust 0.2s infinite;
+  }
+
+  .circulo {
+    z-index: -50;
+    position: absolute;
+    background: linear-gradient(to bottom, #b4b2b2 0%, #b4b2b2 70%, #f5f5f5 100%);
+    overflow: hidden;
+    border-radius: 100%;
+    width: 800px;
+    height: 800px;
+    left: calc(50% - 400px);
+    top: calc(50% - 400px);
+    border: #025f1b 10px solid;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translate3d(0px, 0px, 0);
+    }
+    50% {
+      transform: translate3d(0px, -4px, 0);
+    }
+    100% {
+      transform: translate3d(0px, 0px, 0);
+    }
+  }
+
+  @keyframes exhaust {
+    0% {
+      background: linear-gradient(to bottom, transparent 10%, #f5f5f5 100%);
+    }
+    50% {
+      background: linear-gradient(to bottom, transparent 8%, #f5f5f5 100%);
+    }
+    75% {
+      background: linear-gradient(to bottom, transparent 12%, #f5f5f5 100%);
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1, 1);
+      opacity: .25;
+    }
+    50% {
+      transform: scale(1.2, 1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1, 1);
+      opacity: .25;
+    }
+  }
+
+  </style>
+  <noscript>
+    <h2>Para continuar usando esta maravillosa aplicación active el JavaScript. Gracias.</h2>
+  </noscript>
+
+
+<script type="text/javascript" src="runtime.12344fa475c0a18ee9a0.js"></script><script type="text/javascript" src="polyfills.402b7a5860671b1dcde7.js"></script><script type="text/javascript" src="main.658a2503c5ac2af8b6dd.js"></script></body></html>

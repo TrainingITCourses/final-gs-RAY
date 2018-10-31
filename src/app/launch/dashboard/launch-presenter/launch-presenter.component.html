@@ -1,0 +1,34 @@
+<div ray-container *ngIf="launches$ | async as launch">
+  <div ray-cols>
+    <div ray-card>
+      <h2>Lanzamiento</h2>
+      <h3>Nombre: {{ launch?.name }}</h3>
+      <h3>Fecha: {{ launch?.date | date: 'dd/MM/yyyy HH:mm' }}</h3>
+      <h3>Lanzado desde: {{ launch?.location }}</h3>
+      <div ray-fail *ngIf="launch?.failreason">
+        <h3>{{ launch?.failreason }}</h3>
+      </div>
+    </div>
+    <div ray-card>
+      <h2>Agencia</h2>
+      <h3>Nombre: {{ launch?.agencie.name }}</h3>
+      <h3>País: {{ launch?.agencie.country }}</h3>
+      <div ray-link>
+        <a target="_blank" rel="noopener noreferrer" href="{{ launch?.agencie.url }}">Enlace a la página de la agencia</a>
+      </div>
+    </div>
+  </div>
+  
+  <div ray-card ray-grande>
+    <h2>Cohete</h2>
+    <h3>Nombre: {{ launch?.rocket.name }}</h3>
+    <h3>Missión: {{ launch?.rocket.mission }}</h3>
+    <div ray-image>
+      <img src="{{ launch?.rocket.image }}">
+    </div>
+    <div ray-link>
+      <a target="_blank" rel="noopener noreferrer" href="{{ launch?.rocket.missionUrl }}">Enlace a la página de la misión</a>
+    </div>
+  </div>
+
+</div>

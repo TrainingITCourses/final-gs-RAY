@@ -1,0 +1,6 @@
+<div app-container>
+  <div app-cols *ngFor="let a of launches$ | async" routerLink="/launch/{{a.id}}">
+    <h3>{{ a.name }}</h3>
+    <h4>{{ a.date | date: 'dd/MM/yyyy HH:mm' }}</h4>
+  </div>
+</div>

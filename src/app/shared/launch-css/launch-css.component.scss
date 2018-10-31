@@ -1,0 +1,75 @@
+[ray-cohete] {
+  position: absolute;
+  width: 20px;
+  animation: girar 2s infinite;
+  left: 10px;
+  top: 8px;
+  z-index: 4;
+
+  [ray-cuerpo] {
+    background: linear-gradient(to left, #48c729 50%, #1e5510 100%);
+    height: 40px;
+    left: calc(50% - 25px);
+    border-top-right-radius: 100%;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top: 2px solid #025f1b;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    left: calc(50% - 5px);
+    width: 10px;
+    height: 3px;
+    background-color: #025f1b;
+    bottom: -3px;
+    border-bottom-right-radius: 60%;
+    border-bottom-left-radius: 60%;
+  }
+  [ray-ventana] {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: linear-gradient(to bottom, lightblue 0%, rgb(21, 42, 100) 100%);
+    left: calc(50% - 6px);
+    top: 7px;
+    border: 1px solid #025f1b;
+  }
+  [ray-ala] {
+    position: absolute;
+    z-index: -1;
+    height: 15px;
+    width: 15px;
+    background: linear-gradient(to top, #025f1b 20%, #3fac24 100%);
+  }
+  [ray-ala-izq] {
+    left: -5px;
+    top: calc(100% - 15px);
+    border-top-left-radius: 80%;
+    border-bottom-left-radius: 20%;
+  }
+  [ray-ala-der] {
+    right: -5px;
+    top: calc(100% - 15px);
+    border-top-right-radius: 80%;
+    border-bottom-right-radius: 20%;
+  }
+
+  [ray-letras] {
+    position: absolute;
+    width: 30px;
+    top: 15px;
+    left: 7px;
+    font-family: 'Courthan', serif;
+    font-size: 12px;
+    font-style: bold;
+    color: #025f1b;
+  }
+}
+
+@font-face {
+  font-family: Courthan;
+  src: url(../../../assets/fonts/Courthan.ttf);
+}

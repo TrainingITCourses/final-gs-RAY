@@ -1,0 +1,55 @@
+{
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/*.css",
+          "/*.js"
+        ]
+      }
+    }, {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/icons/**",
+          "/assets/fonts/**"
+        ],
+        "urls": [
+          "https://fonts.googleapis.com/css?family=Alegreya"
+        ]
+      }
+    }
+  ], "dataGroups":[
+    {
+      "name": "cache-first",
+      "urls": [
+        "http://127.0.0.1:8080/assets/launchstatus.json"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 10,
+        "maxAge": "5d"
+      }
+    },
+    {
+      "name": "api-first",
+      "urls":[
+        "http://127.0.0.1:8080/assets/launchlibrary.json"
+      ],
+      "cacheConfig":{
+        "strategy" : "freshness",
+        "maxSize": 500,
+        "maxAge" : "2h",
+        "timeout" : "4s"
+      }
+    }
+  ]
+}

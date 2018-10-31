@@ -1,0 +1,3 @@
+<div app-container>
+  <ray-card app-cols *ngFor="let type of typesStatus$ | async" [status]="type"></ray-card>
+</div>

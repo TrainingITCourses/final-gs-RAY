@@ -1,0 +1,28 @@
+[ray-card] {
+  box-shadow: 0 4px 8px 0 rgba(19, 93, 0, 0.51);
+  transition: 0.3s;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: #7fff00;
+  color: #30560b;
+  cursor: pointer;
+  height: 125px;
+
+  h4 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+[ray-card]:hover {
+  box-shadow: 0 8px 16px 0 rgba(19, 93, 0, 0.51);
+  background-color: #30560b;
+  color: #7fff00;
+}

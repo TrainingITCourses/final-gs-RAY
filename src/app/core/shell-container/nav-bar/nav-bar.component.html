@@ -1,0 +1,30 @@
+<div ray-bar>
+  <div ray-bar-izquierda>
+    <div ray-icono>
+      <ray-launch-css></ray-launch-css>
+    </div>
+    <h3>RA</h3><h2>y</h2><h3>Launches</h3>
+    <div ray-circle *ngIf="(pag$?.asObservable() | async) != 0" (click)="atras()">
+      <div ray-button></div>
+    </div>
+  </div>
+  <div ray-bar-centrado>
+    <h3 style="padding-right: 15px;">{{ (pag$?.asObservable() | async) === 0 ? 'Número de lanzamientos: ' : (pag$?.asObservable() | async) === 1 ? 'Estado: ' : 'Lanzamiento: ' }}</h3>
+    <h3 *ngIf="(pag$?.asObservable() | async) === 0">{{ (launches$ | async).launches?.length | number }}</h3>
+    <h3 *ngIf="(pag$?.asObservable() | async) === 1">{{ (typeStatus$ | async).nameSelected }}</h3>
+    <h3 *ngIf="(pag$?.asObservable() | async) === 2">{{ (launches$ | async).launchSelected?.name }}</h3>
+  </div>
+  <div ray-bar-derecha *ngIf="(pag$?.asObservable() | async) === 0">
+    <button (click)="checkForUpdate()">Chequear versión</button>
+    <h3>Ver. {{ (version$ | async).version }}</h3>
+  </div>
+  <div ray-bar-derecha *ngIf="(pag$?.asObservable() | async) === 1">
+    <button (click)="ordenar(-1)">Ordenar ↑</button>
+    <button (click)="ordenar(1)">Ordenar ↓</button>
+    <h3>{{ (launches$ | async).launchesFiltered?.length | number }}</h3>
+    <p>lanzamientos</p>
+  </div>
+  <div ray-bar-derecha *ngIf="(pag$?.asObservable() | async) === 2">
+    <h3>{{ (launches$ | async).launchSelected?.date | date: 'dd/MM/yyyy HH:mm' }}</h3>
+  </div>
+</div>
